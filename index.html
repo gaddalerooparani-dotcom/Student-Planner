@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">STAY ORGANIZED</p>
+      <h1>Student Planner</h1>
+      <p class="subtitle">Plan your study day, one task at a time.</p>
+    </div>
+    <div class="date-card">
+      <span id="todayLabel">Today</span>
+      <strong id="todayDate"></strong>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="summary-grid" aria-label="Task summary">
+      <article class="summary-card">
+        <span class="summary-label">Total tasks</span>
+        <strong id="totalCount">0</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Completed</span>
+        <strong id="completedCount">0</strong>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Pending</span>
+        <strong id="pendingCount">0</strong>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR TO-DO LIST</p>
+          <h2>Add a task</h2>
+        </div>
+      </div>
+      <form id="taskForm" class="task-form">
+        <label>
+          Task name
+          <input id="taskInput" type="text" placeholder="e.g. Revise mathematics" maxlength="80" required>
+        </label>
+        <label>
+          Due date
+          <input id="dateInput" type="date" required>
+        </label>
+        <label>
+          Subject
+          <input id="subjectInput" type="text" placeholder="e.g. Mathematics" maxlength="40">
+        </label>
+        <button type="submit">+ Add task</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="tasks-heading">
+        <div>
+          <p class="eyebrow">MAKE PROGRESS</p>
+          <h2>Your tasks</h2>
+        </div>
+        <select id="filterSelect" aria-label="Filter tasks">
+          <option value="all">All tasks</option>
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+      </div>
+      <ul id="taskList" class="task-list"></ul>
+      <p id="emptyMessage" class="empty-message">No tasks yet. Add your first task above!</p>
+    </section>
+
+    <p class="footer-note">Your tasks are saved in this browser using local storage.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
